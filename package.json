@@ -19,6 +19,7 @@
     "@vue/eslint-config-standard": "^3.0.1",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "mockjs": "^1.0.1-beta3",
     "vue-template-compiler": "^2.5.17"
   }
 }
