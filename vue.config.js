@@ -15,7 +15,7 @@ module.exports = {
       .set('_c', resolve('src/components'))
   },
   // 打包时不生产.map文件
-  productionSourceMap: false，
+  productionSourceMap: false,
   // 跨域配置 将未知请求代理到指定url
   devServer: {
     proxy: 'http://localhost:4000'
