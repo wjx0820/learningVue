@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <b>{{food}}</b>
     <button @click="handleClick('back')">返回上一页</button>
     <button @click="handleClick('push')">跳转到parent</button>
     <button @click="handleClick('replace')">替换到parent</button>
@@ -14,6 +15,12 @@ export default {
   name: 'home',
   components: {
     HelloWorld
+  },
+  props: {
+    food: {
+      type: String,
+      default: 'apple'
+    }
   },
   methods: {
     handleClick (type) {

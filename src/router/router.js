@@ -4,7 +4,10 @@ export default [
     path: '/',
     alias: '/home_page',
     name: 'home',
-    component: Home
+    component: Home,
+    props: route => ({
+      food: route.query.food
+    })
   },
   {
     path: '/about',
@@ -12,13 +15,19 @@ export default [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+    component: () =>
+      import(/* webpackChunkName: "about" */ '@/views/About.vue'),
+    props: {
+      food: 'banana'
+    }
   },
   {
     // 动态路由加载
     // 一个“路径参数”使用冒号 : 标记。当匹配到一个路由时，参数值会被设置到 this.$route.params
     path: '/argu/:name',
-    component: () => import('@/views/argu.vue')
+    name: 'argu',
+    component: () => import('@/views/argu.vue'),
+    props: true
   },
   {
     // 嵌套路由
